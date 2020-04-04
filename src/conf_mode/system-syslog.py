@@ -315,10 +315,10 @@ def verify(c):
 
 def apply(c):
     if not c:
-        subprocess.call(['sudo', 'systemctl', 'stop', 'syslog'])
+        subprocess.call(['sudo', 'systemctl', 'stop', 'rsyslog'])
         return 0
 
-    subprocess.call(['sudo', 'systemctl', 'restart', 'syslog'])
+    subprocess.call(['sudo', 'systemctl', 'restart', 'rsyslog'])
 
 if __name__ == '__main__':
     try:
