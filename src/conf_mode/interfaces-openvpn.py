@@ -72,6 +72,7 @@ default_config_data = {
     'remote_address': [],
     'remote_host': [],
     'remote_port': '',
+    'run_as_root': False,
     'client': [],
     'server_domain': '',
     'server_max_conn': '',
@@ -367,6 +368,13 @@ def get_config():
 
     if conf.exists('replace-default-route local'):
         openvpn['redirect_gateway'] = 'local def1'
+
+    if conf.exists('run-as-root'):
+        openvpn['run_as_root'] = True
+        user = 'root'
+        group = 'root'
+        openvpn['uid'] = user
+        openvpn['gid'] = group
 
     # Topology for clients
     if conf.exists('server topology'):

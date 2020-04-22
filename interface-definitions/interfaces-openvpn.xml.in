@@ -397,6 +397,12 @@
               </leafNode>
             </children>
           </node>
+          <leafNode name="run-as-root">
+            <properties>
+              <help>Run tunnel under root privileges - Not recommended</help>
+              <valueless/>
+            </properties>
+          </leafNode>
           <node name="server">
             <properties>
               <help>Server-mode options</help>
